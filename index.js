@@ -35,10 +35,10 @@ app.get("/", function(req, res){
  res.redirect("/contacts");
 });
 // Contacts - Index // 7
-app.get("/contacts", function(req, res){
- contactMemb.find({}, function(err, contacts){
-  if(err) return res.json(err);
-  res.render("contacts/index", {contacts:contacts});
+app.get("/contacts", function(request, resonse){
+ contactMemb.find({}, function(error, selDatas){
+  if(error) return resonse.json(error);
+  resonse.render("contacts/index", {contacts:selDatas});
  })
 });
 // Contacts - New // 8
