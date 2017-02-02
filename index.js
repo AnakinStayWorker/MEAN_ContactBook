@@ -27,7 +27,7 @@ var contactSchema = mongoose.Schema({
  email:{type:String},
  phone:{type:String}
 });
-var contactMemb = mongoose.model("contact", contactSchema);
+var contactMemb = mongoose.model("contactBook", contactSchema);
 
 // Routes
 // Home // 6
@@ -38,7 +38,7 @@ app.get("/", function(req, res){
 app.get("/contacts", function(request, resonse){
  contactMemb.find({}, function(error, selDatas){
   if(error) return resonse.json(error);
-  resonse.render("contacts/index", {contacts:selDatas});
+  resonse.render("contacts/index", {contactBookDatas:selDatas});
  })
 });
 // Contacts - New // 8
