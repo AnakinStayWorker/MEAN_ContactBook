@@ -39,7 +39,7 @@ app.get("/contacts", function(request, resonse){
  contactMemb.find({}, function(error, selDatas){
   if(error) return resonse.json(error);
   resonse.render("contacts/index", {contactBookDatas:selDatas});
- })
+});
 });
 // Contacts - New // 8
 app.get("/contacts/new", function(req, res){
