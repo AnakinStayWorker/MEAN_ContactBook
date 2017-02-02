@@ -34,17 +34,20 @@ var contactMemb = mongoose.model("contactBook", contactSchema);
 app.get("/", function(req, res){
  res.redirect("/contacts");
 });
+
 // Contacts - Index // 7
 app.get("/contacts", function(request, resonse){
  contactMemb.find({}, function(error, selDatas){
   if(error) return resonse.json(error);
   resonse.render("contacts/index", {contactBookDatas:selDatas});
+  });
 });
-});
+
 // Contacts - New // 8
 app.get("/contacts/new", function(req, res){
  res.render("contacts/new");
 });
+
 // Contacts - create // 9
 app.post("/contacts", function(req, res){
  contactMemb.create(req.body, function(err, contact){
