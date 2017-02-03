@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
  <head>
-  <% include ../partials/head %> <!-- 1 -->
+  <% include ../partials/head %>
  </head>
  <body>
-  <% include ../partials/nav %> <!-- 2 -->
+  <% include ../partials/nav %>
 
   <div class="contact contact-index">
    <h2>Index</h2>
    <ul>
-    <% contactBookDatas.forEach(function(contactVal) { %> <!-- 3 -->
+    <% contactBookDatas.forEach(function(contact) { %>
      <li>
-      <%= contactVal.name %>
+      <a href="/contacts/<%= contact._id %>"><%= contact.name %></a>
      </li>
     <% }) %>
    </ul>
